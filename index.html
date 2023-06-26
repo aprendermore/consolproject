@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tela de Login</title>
+  <script>
+    function validarLogin() {
+      // Obtém os valores do formulário
+      var senha = document.getElementById("senha").value;
+
+      // Verifica se a senha é válida
+      if (senha === "senha123") {
+        // Redireciona para a página desejada
+        window.location.href = "conteudo.html";
+      } else {
+        // Exibe uma mensagem de erro caso a senha seja inválida
+        alert("Senha inválida. Por favor, tente novamente.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Tela de Login</h2>
+  <form>
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" required><br><br>
+
+    <input type="button" value="Entrar" onclick="validarLogin()">
+  </form>
+</body>
+</html>
