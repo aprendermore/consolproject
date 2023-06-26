@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Tela de Login</title>
-  <style>
+
     body {
       display: flex;
       justify-content: center;
@@ -54,15 +50,3 @@
       color: red;
       margin-bottom: 10px;
     }
-  </style>
-</head>
-<body>
-  <h1>Tela de Login</h1>
-  <form>
-    <label for="senha">Senha:</label>
-    <input type="password" id="senha" name="senha" required><br><br>
-
-    <input type="submit" value="Entrar">
-  </form>
-</body>
-</html>
