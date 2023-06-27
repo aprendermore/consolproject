@@ -1,5 +1,30 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title>Conteúdo</title>
+</head>
+<body>
+  <h1>Página de Conteúdo</h1>
+
+  <script>
+    // Verifica se o usuário está autenticado
+    var autenticado = localStorage.getItem("autenticado");
+    if (!autenticado) {
+      // Redireciona para a página de login se não estiver autenticado
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+<!--
+
+<!DOCTYPE html>
+<html>
   <head>
     <base target="_top">
   </head>
@@ -8,3 +33,5 @@
     <a href ="https://drive.google.com/file/d/1E6QsCdyKUd9jCTyY6i6YWeylB24SFYtz/view?usp=sharing">Acesso o vídeo</a>
   </body>
 </html>
+
+-->
