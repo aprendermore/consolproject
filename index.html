@@ -2,30 +2,40 @@
 <html>
 <head>
   <title>Tela de Login</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+</head>
+<body>
+  <div class="container">
+    <form class="login-form">
+      <h2>Tela de Login</h2>
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" name="senha" required>
+
+      <input type="submit" value="Entrar" onclick="return validarLogin()">
+    </form>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
   <script>
     function validarLogin() {
-      // Obtém os valores do formulário
       var senha = document.getElementById("senha").value;
 
-      // Verifica se a senha é válida
       if (senha === "senha123") {
-        // Redireciona para a página desejada
-        window.location.href = "conteudo.html";
+        window.location.href = "https://www.youtube.com/watch?v=28lkK072FCY";
+        return true; // Permite o envio do formulário
       } else {
-        // Exibe uma mensagem de erro caso a senha seja inválida
-        alert("Senha inválida. Por favor, tente novamente.");
+        Swal.fire({
+          icon: 'error',
+          title: 'Senha inválida',
+          text: 'Por favor, tente novamente.',
+          confirmButtonColor: 'red',
+          confirmButtonText: 'Ok'
+        });
+        return false; // Impede o envio do formulário
       }
     }
   </script>
-</head>
-<body>
-  <h2>Tela de Login</h2>
-  <form>
-    <label for="senha">Senha:</label>
-    <input type="password" id="senha" name="senha" required><br><br>
-
-    <input type="button" value="Entrar" onclick="validarLogin()">
-  </form>
 </body>
+</html>
+
 </html>
