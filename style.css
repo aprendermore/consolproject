@@ -6,6 +6,9 @@ body {
       background-color: lightgray;
     }
 
+container{
+      align: center;
+}
     form {
       width: 300px;
       padding: 20px;
