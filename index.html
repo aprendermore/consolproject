@@ -6,7 +6,7 @@
 </head>
 <body>
   <div class="container">
-    <form class="login-form">
+    <form class="login-form" action="conteudo.html">
       <h2>Tela de Login</h2>
       <label for="senha">Senha:</label>
       <input type="password" id="senha" name="senha" required>
@@ -21,7 +21,6 @@
       var senha = document.getElementById("senha").value;
 
       if (senha === "senha123") {
-        window.location.href = "https://www.youtube.com/watch?v=28lkK072FCY";
         return true; // Permite o envio do formulário
       } else {
         Swal.fire({
@@ -36,6 +35,4 @@
     }
   </script>
 </body>
-</html>
-
 </html>
