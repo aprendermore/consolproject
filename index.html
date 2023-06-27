@@ -23,7 +23,7 @@
 
       if (senha === "senha123") {
         var senhaCodificada = encodeURIComponent(senha);
-        var urlRedirecionamento = "https://aprendermore.github.io/consolproject/conteudo.html?senha=" + senhaCodificada;
+        var urlRedirecionamento = "conteudo.html?senha=" + senhaCodificada;
         window.location.replace(urlRedirecionamento);
         return false; // Impede o envio do formulário
       } else {
