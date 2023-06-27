@@ -27,6 +27,10 @@
         var senha = document.getElementById("senha").value;
 
         if (senha === "senha123") {
+          // Armazena um token de autenticação no navegador
+          localStorage.setItem("autenticado", "true");
+
+          // Redireciona para a página de conteúdo
           window.location.href = "conteudo.html";
         } else {
           Swal.fire({
@@ -40,4 +44,5 @@
       });
     });
   </script>
-</
+</body>
+</html>
