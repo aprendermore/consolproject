@@ -12,20 +12,23 @@
       <label for="senha">Senha:</label>
       <input type="password" id="senha" name="senha" required>
 
-      <input type="submit" value="Entrar" onclick="return validarLogin()">
+      <input type="submit" value="Entrar" onclick="validarLogin(event)">
     </form>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
   <script>
-    function validarLogin() {
+    function validarLogin(event) {
+      event.preventDefault(); // Impede o envio do formulário padrão
+
       var senha = document.getElementById("senha").value;
 
       if (senha === "senha123") {
         var senhaCodificada = encodeURIComponent(senha);
-        var urlRedirecionamento = "conteudo.html?senha=" + senhaCodificada;
-        window.location.replace(urlRedirecionamento);
-        return false; // Impede o envio do formulário
+        var novaURL = "conteudo.html?senha=" + senhaCodificada;
+
+        window.history.replaceState(null, null, novaURL); // Redirecionamento sem adicionar ao histórico
+        window.location.href = novaURL; // Redirecionamento para a nova URL
       } else {
         Swal.fire({
           icon: 'error',
@@ -34,32 +37,8 @@
           confirmButtonColor: 'red',
           confirmButtonText: 'Ok'
         });
-        return false; // Impede o envio do formulário
       }
     }
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
