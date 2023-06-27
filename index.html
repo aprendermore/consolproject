@@ -7,7 +7,7 @@
 </head>
 <body>
   <div class="container">
-    <form class="login-form" action="conteudo.html" method="post">
+    <form class="login-form">
       <h2>Tela de Login</h2>
       <label for="senha">Senha:</label>
       <input type="password" id="senha" name="senha" required>
@@ -18,25 +18,26 @@
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
   <script>
-    function validarLogin(event) {
-      event.preventDefault(); // Impede o envio do formulário padrão
+    document.addEventListener("DOMContentLoaded", function() {
+      var form = document.querySelector(".login-form");
 
-      var senha = document.getElementById("senha").value;
+      form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Impede o envio do formulário padrão
 
-      if (senha === "senha123") {
-        event.target.submit(); // Envia o formulário usando o método POST
-      } else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Senha inválida',
-          text: 'Por favor, tente novamente.',
-          confirmButtonColor: 'red',
-          confirmButtonText: 'Ok'
-        });
-      }
-    }
+        var senha = document.getElementById("senha").value;
 
-    document.querySelector('.login-form').addEventListener('submit', validarLogin);
+        if (senha === "senha123") {
+          window.location.href = "conteudo.html";
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Senha inválida',
+            text: 'Por favor, tente novamente.',
+            confirmButtonColor: 'red',
+            confirmButtonText: 'Ok'
+          });
+        }
+      });
+    });
   </script>
-</body>
-</html>
+</
