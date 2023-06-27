@@ -3,10 +3,11 @@
 <head>
   <title>Tela de Login</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
   <div class="container">
-    <form class="login-form" action="conteudo.html">
+    <form class="login-form">
       <h2>Tela de Login</h2>
       <label for="senha">Senha:</label>
       <input type="password" id="senha" name="senha" required>
@@ -14,14 +15,17 @@
       <input type="submit" value="Entrar" onclick="return validarLogin()">
     </form>
   </div>
-  
+
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
   <script>
     function validarLogin() {
       var senha = document.getElementById("senha").value;
 
       if (senha === "senha123") {
-        return true; // Permite o envio do formulário
+        var senhaCodificada = encodeURIComponent(senha);
+        var urlRedirecionamento = "https://aprendermore.github.io/consolproject/conteudo.html?senha=" + senhaCodificada;
+        window.location.replace(urlRedirecionamento);
+        return false; // Impede o envio do formulário
       } else {
         Swal.fire({
           icon: 'error',
@@ -36,3 +40,26 @@
   </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
